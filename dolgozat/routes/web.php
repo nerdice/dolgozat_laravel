@@ -3,6 +3,7 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Book;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,5 +25,9 @@ Route::post('/new-genre', [GenreController::class, 'store'])->name('new-genre.st
 
 Route::get('/new-book', [BookController::class, 'index'])->name('new-book.index');
 Route::post('/new-book', [BookController::class, 'store'])->name('new-book.store');
+
+Route::get('/books', [BookController::class, 'books_index'])->name('books.index');
+
+
 
 require __DIR__.'/auth.php';

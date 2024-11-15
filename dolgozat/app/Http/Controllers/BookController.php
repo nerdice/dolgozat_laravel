@@ -30,4 +30,9 @@ class BookController extends Controller
 
         return redirect()->route('new-book.index')->with('success', 'New book added successfully! ');
     }
+
+    public function books_index() {
+        return view('books');
+    }
+
 }
