@@ -12,7 +12,7 @@
             @endforeach
         @endif
 
-        @if (session('success'))
+        @if(session('success'))
             {{session('success')}}
         @endif
 
@@ -23,8 +23,14 @@
                     <li>Book title: {{$book->title}}</li>
                     <li>Author: {{$book->author}}</li>
                     <li>Year of release: {{$book->release_year}}</li>
-                    <li>{{book->genre->genre_title}}</li>
+                    <li>Genre: {{$book->genre->genre_title}}</li>
                 </ul>    
+                <form action="" method="GET">
+                    <button>Kölcsönzés</button>
+                </form>
+                <form action="{{route('books.destroy')}}" method="DELETE">
+                    <button type="submit">Törlés</button>
+                </form>
                 <hr>
             @endforeach
         </div>

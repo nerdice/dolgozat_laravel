@@ -11,5 +11,8 @@ class Book extends Model
 
     protected $fillable = ['title', 'author', 'release_year', 'genre_id'];
 
-    
+    public function genre() {
+        return $this->belongsTo(Genre::class);
+    }
+
 }

@@ -27,6 +27,7 @@ Route::get('/new-book', [BookController::class, 'index'])->name('new-book.index'
 Route::post('/new-book', [BookController::class, 'store'])->name('new-book.store');
 
 Route::get('/books', [BookController::class, 'books_index'])->name('books.index');
+Route::delete('/books', [BookController::class, 'destroy'])->name('books.destroy');
 
 
 
