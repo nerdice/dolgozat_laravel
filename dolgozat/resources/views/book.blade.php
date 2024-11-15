@@ -22,11 +22,16 @@
             <p>Author: {{$book->author}}</p>
             <p>Release year: {{$book->release_year}}</p>
             <br>
-            <label for="email">E-mail: </label> <br>
-            <input type="email" name="email" id="email"> <br>
-            <label for="rent_date">Date of rent: </label> <br>
-            <input type="date" name="rent_date" id="rent_date"> <br>
-            <button>Rent out</button>
+            <form action="{{route('rent.store')}}" method="POST">
+                @csrf
+                @method('POST')
+                <input type="hidden" name="book_id" value="{{$book->id}}">
+                <label for="email">E-mail: </label> <br>
+                <input type="email" name="email" id="email"> <br>
+                <label for="rent_out">Date of rent: </label> <br>
+                <input type="date" name="rent_out" id="rent_out"> <br>
+                <button type="submit">Rent out</button>
+            </form>
         </div>
 
         </div>

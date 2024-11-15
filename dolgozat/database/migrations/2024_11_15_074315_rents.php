@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('book_id');
             $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             $table->date('rent_out');
-            $table->date('rent_return');
+            $table->date('rent_return')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
