@@ -20,6 +20,6 @@ class GenreController extends Controller
             'genre_title' => $request->genre_title
         ]);
 
-        return view('new-genre')->with('success', 'Genre added successfully! ');
+        return redirect()->route('new-genre.index')->with('success', 'Genre added successfully! ');
     }
 }

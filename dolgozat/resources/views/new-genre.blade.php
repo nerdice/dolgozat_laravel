@@ -6,6 +6,9 @@
         <title>New genre</title>
     </head>
     <body>
+        @if (session('success'))
+            {{session('success')}}
+        @endif
         <form action="{{route('new-genre.store')}}" method="POST">
             @csrf
             <label for="genre_title">Add new genre: </label> <br>
