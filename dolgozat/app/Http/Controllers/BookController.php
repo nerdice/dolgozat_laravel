@@ -35,6 +35,10 @@ class BookController extends Controller
         return view('books', ['books' => Book::all()]);
     }
 
+    public function book_index($id) {
+        return view('book', ['book' => Book::findOrFail($id)]);
+    }
+
     public function destroy($id) {
         $book = Book::findOrFail($id);
         Book::destroy($id);

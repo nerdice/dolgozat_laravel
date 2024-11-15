@@ -25,7 +25,9 @@
                     <li>Year of release: {{$book->release_year}}</li>
                     <li>Genre: {{$book->genre->genre_title}}</li>
                 </ul>    
-                <form action="" method="GET">
+                <form action="{{route('book.index', $book->id)}}" method="GET">
+                    @csrf
+                    @method('GET')
                     <button>Kölcsönzés</button>
                 </form>
                 <form action="{{route('books.destroy', $book->id)}}" method="POST">

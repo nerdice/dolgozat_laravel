@@ -27,8 +27,11 @@ Route::get('/new-book', [BookController::class, 'index'])->name('new-book.index'
 Route::post('/new-book', [BookController::class, 'store'])->name('new-book.store');
 
 Route::get('/books', [BookController::class, 'books_index'])->name('books.index');
+//Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');
 Route::delete('/books/{id}', [BookController::class, 'destroy'])->name('books.destroy');
 
+//Route::get('book', [BookController::class, 'book_index'])->name('book.index'); // books/book nem mukodott, id-nak vette a route-ot
+Route::get('books/book/{id}', [BookController::class, 'book_index'])->name('book.index');
 
 
 require __DIR__.'/auth.php';
