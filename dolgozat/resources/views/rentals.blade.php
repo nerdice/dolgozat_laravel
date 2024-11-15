@@ -20,7 +20,7 @@
         <div> <hr>
             @foreach($rents->all() as $r)
             {{$r}} 
-            <hr>
+            <hr> 
             @endforeach
         </div>
     </body>
