@@ -28,7 +28,9 @@
                 <form action="" method="GET">
                     <button>Kölcsönzés</button>
                 </form>
-                <form action="{{route('books.destroy')}}" method="DELETE">
+                <form action="{{route('books.destroy', $book->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
                     <button type="submit">Törlés</button>
                 </form>
                 <hr>
