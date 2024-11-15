@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -20,5 +21,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/new-genre', [GenreController::class, 'index'])->name('new-genre.index');
 Route::post('/new-genre', [GenreController::class, 'store'])->name('new-genre.store');
+
+Route::get('/new-book', [BookController::class, 'index'])->name('new-book.index');
+Route::post('/new-book', [BookController::class, 'store'])->name('new-book.store');
 
 require __DIR__.'/auth.php';
