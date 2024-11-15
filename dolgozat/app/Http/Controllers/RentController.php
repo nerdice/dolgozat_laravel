@@ -24,4 +24,8 @@ class RentController extends Controller
 
         return redirect()->back()->with('success', 'Book rented out successfully! ');
     }
+
+    public function index() {
+        return view('rentals', ['rents' => Rent::all()]);
+    }
 }

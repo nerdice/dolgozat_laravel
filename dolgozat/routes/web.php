@@ -34,4 +34,6 @@ Route::get('books/book/{id}', [BookController::class, 'book_index'])->name('book
 
 Route::post('/rent', [RentController::class, 'store'])->name('rent.store');
 
+Route::get('/rentals', [RentController::class, 'index'])->name('rents.index');
+
 require __DIR__.'/auth.php';
