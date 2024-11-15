@@ -32,7 +32,7 @@ class BookController extends Controller
     }
 
     public function books_index() {
-        return view('books');
+        return view('books', ['books' => Book::all()]);
     }
 
 }
